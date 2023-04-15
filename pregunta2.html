@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <title>Pregunta 2</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row pt-4">
+            <div class="col-12">
+                <div class="card text-bg-success">
+                    <div>
+                        <h5 class="card-header text-center">Datos de Usuario</h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- Método POST -->
+                        <form action="pregunta2.php" method="post">
+                            <div class="form-group">
+                                <div>
+                                    <label>Nombre y Apellido</label>
+                                    <input id="nom" name="nom" type="text" class="form-control" placeholder="Nombre de usuario" required>
+                                </div>
+                                <div>
+                                    <label>Dirección</label>
+                                    <input id="dir" name="dir" type="text" class="form-control" placeholder="Dirección de usuario" required>
+                                </div>
+                                <div>
+                                    <label>E-mail</label>
+                                    <input id="email" name="email" type="email" class="form-control" placeholder="Correo electrónico" required>
+                                </div>
+                                <div>
+                                    <label>Edad</label>
+                                    <input id="age" name="age" type="number" class="form-control" placeholder="18" required>
+                                </div>
+                                <div class="mt-2">
+                                    <p id="mensaje1" class="text-white text-center"></p>
+                                </div>
+                            </div>
+                            <div>
+                            <!-- El botón tipo reset permite regresar a los valores originales del momento en que la página fue cargada -->
+                                <button id="btnSubmit" type="submit" class="btn btn-primary">Enviar</button>
+                                <button type="reset" class="btn btn-secondary">Limpiar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+    document.getElementById('btnSubmit').onclick=function(){
+        var age = document.getElementById("age").value;
+        
+        if (age<18){
+            alert("Solo se admiten usuarios mayores de edad");
+            return false;
+        } else if (age>114) {
+            alert("Ingrese una edad válida");
+            return false;
+        } else {
+            return true;
+        }
+    }
+</script>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+</html>
